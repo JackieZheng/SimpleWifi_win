@@ -335,6 +335,11 @@ namespace SimpleWifiExampleWinForm
             Process.Start("ncpa.cpl");
         }
 
+        /// <summary>
+        /// open system Airplanemodel setting
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAirplane_Click(object sender, EventArgs e)
         {
             Process.Start("ms-settings:network-airplanemode");
