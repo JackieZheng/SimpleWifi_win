@@ -344,6 +344,5 @@ namespace SimpleWifiExampleWinForm
         {
             Process.Start("ms-settings:network-airplanemode");
         }
-
     }
 }
