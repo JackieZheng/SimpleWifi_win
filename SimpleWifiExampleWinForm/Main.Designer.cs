@@ -35,14 +35,14 @@ namespace SimpleWifiExampleWinForm
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.tssl = new System.Windows.Forms.ToolStripStatusLabel();
             this.contextMenuStripView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.RefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.WifiInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BtnEnableWlan = new System.Windows.Forms.Button();
             this.btnSet = new System.Windows.Forms.Button();
             this.btnAirplane = new System.Windows.Forms.Button();
-            this.RefreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.WifiInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1.SuspendLayout();
             this.contextMenuStripView.SuspendLayout();
             this.contextMenuStripNotify.SuspendLayout();
@@ -92,7 +92,25 @@ namespace SimpleWifiExampleWinForm
             this.RefreshToolStripMenuItem,
             this.WifiInfoToolStripMenuItem});
             this.contextMenuStripView.Name = "contextMenuStripView";
-            this.contextMenuStripView.Size = new System.Drawing.Size(243, 97);
+            this.contextMenuStripView.Size = new System.Drawing.Size(150, 64);
+            // 
+            // RefreshToolStripMenuItem
+            // 
+            this.RefreshToolStripMenuItem.Image = global::SimpleWifiExampleWinForm.Properties.Resources.刷新;
+            this.RefreshToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem";
+            this.RefreshToolStripMenuItem.Size = new System.Drawing.Size(149, 30);
+            this.RefreshToolStripMenuItem.Text = "Rfresh";
+            this.RefreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItem_Click);
+            // 
+            // WifiInfoToolStripMenuItem
+            // 
+            this.WifiInfoToolStripMenuItem.Image = global::SimpleWifiExampleWinForm.Properties.Resources.密码;
+            this.WifiInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.WifiInfoToolStripMenuItem.Name = "WifiInfoToolStripMenuItem";
+            this.WifiInfoToolStripMenuItem.Size = new System.Drawing.Size(149, 30);
+            this.WifiInfoToolStripMenuItem.Text = "WifiInfo";
+            this.WifiInfoToolStripMenuItem.Click += new System.EventHandler(this.WifiInfoToolStripMenuItem_Click_1);
             // 
             // notifyIcon
             // 
@@ -110,6 +128,15 @@ namespace SimpleWifiExampleWinForm
             this.ExitToolStripMenuItem});
             this.contextMenuStripNotify.Name = "contextMenuStripNotify";
             this.contextMenuStripNotify.Size = new System.Drawing.Size(112, 34);
+            // 
+            // ExitToolStripMenuItem
+            // 
+            this.ExitToolStripMenuItem.Image = global::SimpleWifiExampleWinForm.Properties.Resources.退出;
+            this.ExitToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
+            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
+            this.ExitToolStripMenuItem.Text = "Exit";
+            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // BtnEnableWlan
             // 
@@ -146,37 +173,10 @@ namespace SimpleWifiExampleWinForm
             this.btnAirplane.UseVisualStyleBackColor = true;
             this.btnAirplane.Click += new System.EventHandler(this.BtnAirplane_Click);
             // 
-            // RefreshToolStripMenuItem
-            // 
-            this.RefreshToolStripMenuItem.Image = global::SimpleWifiExampleWinForm.Properties.Resources.刷新;
-            this.RefreshToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.RefreshToolStripMenuItem.Name = "RefreshToolStripMenuItem";
-            this.RefreshToolStripMenuItem.Size = new System.Drawing.Size(242, 30);
-            this.RefreshToolStripMenuItem.Text = "Rfresh";
-            this.RefreshToolStripMenuItem.Click += new System.EventHandler(this.RefreshToolStripMenuItem_Click);
-            // 
-            // WifiInfoToolStripMenuItem
-            // 
-            this.WifiInfoToolStripMenuItem.Image = global::SimpleWifiExampleWinForm.Properties.Resources.密码;
-            this.WifiInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.WifiInfoToolStripMenuItem.Name = "WifiInfoToolStripMenuItem";
-            this.WifiInfoToolStripMenuItem.Size = new System.Drawing.Size(242, 30);
-            this.WifiInfoToolStripMenuItem.Text = "WifiInfo";
-            this.WifiInfoToolStripMenuItem.Click += new System.EventHandler(this.WifiInfoToolStripMenuItem_Click_1);
-            // 
-            // ExitToolStripMenuItem
-            // 
-            this.ExitToolStripMenuItem.Image = global::SimpleWifiExampleWinForm.Properties.Resources.退出;
-            this.ExitToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem";
-            this.ExitToolStripMenuItem.Size = new System.Drawing.Size(111, 30);
-            this.ExitToolStripMenuItem.Text = "Exit";
-            this.ExitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
-            // 
             // MainWin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(144F, 144F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(398, 694);
             this.Controls.Add(this.btnAirplane);
             this.Controls.Add(this.btnSet);
