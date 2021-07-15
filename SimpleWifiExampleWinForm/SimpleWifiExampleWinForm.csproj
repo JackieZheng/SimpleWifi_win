@@ -169,7 +169,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\wifi.ico" />
-    <Content Include="wifi.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
