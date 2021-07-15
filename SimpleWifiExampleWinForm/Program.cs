@@ -79,12 +79,15 @@ namespace SimpleWifiExampleWinForm
         /// <param name="instance"></param>
         private static void SetForegroud(Process instance)
         {
-            IntPtr mainFormHandle = instance.MainWindowHandle;
+            IntPtr mainFormHandle = instance.MainWindowHandle!=IntPtr.Zero? instance.MainWindowHandle: Program.FindWindow(null, "SimpleWifi");
             if (mainFormHandle != IntPtr.Zero)
             {
-                ShowWindowAsync(mainFormHandle, 1);
+                ShowWindowAsync(mainFormHandle, 10);
                 SetForegroundWindow(mainFormHandle);
             }
+            //IntPtr ihand = Program.FindWindow(null, "SimpleWifi");
+            //ShowWindowAsync(ihand, 10);
+            //SetForegroundWindow(ihand);
         }
 
         [DllImport("User32.dll")]
@@ -92,5 +95,11 @@ namespace SimpleWifiExampleWinForm
 
         [DllImport("User32.dll")]
         private static extern bool ShowWindowAsync(IntPtr hWnd, int cmdShow);
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
+        public static extern int ShowWindow(IntPtr hwnd, int nCmdShow);
+
+        [System.Runtime.InteropServices.DllImport("User32.dll")]
+        public static extern IntPtr FindWindow(string IpClassName, string IpWindowName);
     }
 }
